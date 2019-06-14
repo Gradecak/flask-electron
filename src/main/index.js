@@ -10,7 +10,7 @@ const timeout = 10000; // 10 seconds
 freeport((err, port) => {
   if (err) throw err;
 
-  const url = `http://localhost:9000`;
+  const url = `http://localhost:5000`;
   let child = null; // Server process we spawn and kill
 
   // Keep a global reference of the window object, if we don't, the window will
@@ -39,7 +39,8 @@ freeport((err, port) => {
   // browser windows. Some APIs can only be used after this event occurs. We
   // start the child process and wait before loading the web page.
   app.on('ready', () => {
-    child = spawn('./server/.venv/bin/python3', ['./server/main.py']);
+    // child = spawn('./server/.venv/bin/python3', ['./server/main.py']);
+    child = spawn('node', ['./server1/server.js']);
     child.stdout.setEncoding('utf8');
     child.stderr.setEncoding('utf8');
     child.stdout.on('data', console.log);
