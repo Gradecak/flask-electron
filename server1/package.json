@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "knex": "^0.17.6",
+    "knex": "^0.19.5",
     "sqlite3": "^4.0.9"
   }
 }
